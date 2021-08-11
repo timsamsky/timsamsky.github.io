@@ -1,0 +1,396 @@
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300italic,400,400italic");
+
+:root {
+    /* header */
+    --welcome-bg: #4686a0; 
+    --welcome: rgba(255, 255, 255, 0.9);
+    --welcome-bg-strp-1: #9dc66b;
+    --welcome-bg-strp-2: #4fa49a;
+    --welcome-bg-strp-3: #4361c2;
+
+    /* main section */
+    --h-text: #1c1c1c;
+    --text: #616161;
+};
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Source Sans Pro", Helvetica, sans-serif;
+}
+
+img {
+    max-width: 100%;
+}
+
+ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+.container {
+    width: 80%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.row {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    gap: 2rem;
+}
+/*
+*   Navbar
+*/
+
+#navbar {
+    background-color: rgba(0, 0, 0, .8); 
+    z-index: 999;
+    width: 100%;
+    position: fixed;   
+}
+
+.nav {
+    width: 88%;
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+    .navbar-row {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: center;
+        gap: 2em;
+    }
+
+        .nav-link a {
+            color: var(--welcome);
+        }
+
+            .nav-link-1 a:hover,
+            .nav-link-1 a:focus {
+                color: var(--welcome-bg-strp-1);
+            }
+
+            .nav-link-2 a:hover,
+            .nav-link-2 a:focus {
+                color: var(--welcome-bg-strp-2);
+            }
+
+            .nav-link-3 a:hover,
+            .nav-link-3 a:focus {
+                color: var(--welcome-bg-strp-3);
+            }
+
+/*
+*   Header (welcome section)
+*/
+
+#welcome-section {
+    height: 100vh;
+    width: 100%;
+    background-color: var(--welcome-bg);
+    color: var(--welcome);
+    background-attachment: fixed;
+    background-image: linear-gradient(105deg, var(--welcome-bg-strp-1) 5%, var(--welcome-bg-strp-2) 30%, var(--welcome-bg-strp-3));
+    background-position: center; 
+    background-size: cover;
+    overflow: hidden;
+    z-index: 1;
+    position: relative;
+    text-align: center;
+
+    /* flex part */
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+}
+
+    .welcome-section__inner {
+        width: 88%;
+    }
+    
+        .welcome-section__inner h1 {
+            font-weight: 200;
+            font-size: 3rem;
+        }
+
+        .welcome-section__inner p,
+        .welcome-section__inner a {
+            font-size: 1.5rem;
+        }
+
+        .welcome-section__inner p {
+            font-weight: 200;
+        }
+
+        .welcome-section__inner ul {
+            padding-left: 0;
+        }
+
+        .welcome-section__inner a {
+            color: var(--welcome);
+            padding: 0.45em 0.75em;
+            border: 2px solid;
+            border-radius: 5px;
+        }
+
+            .welcome-section__inner a:hover,
+            .welcome-section__inner a:focus {
+                background-color: rgba(255, 255, 255, 0.25);
+            }
+
+/*
+*   Main Section (projects)
+*/
+
+#projects {
+    padding: 3.5em 0 3.5em 0;
+    color: var(--text);
+}
+
+    .project__start {
+        padding-bottom: 2em;
+        text-align: center;
+    }
+
+        .project__start h2 {
+            color: var(--h-text) !important;
+            font-weight: 100;
+            font-size: 2em;
+            line-height: 1.35em;
+        }
+
+        .project__start p {
+            font-weight: 200;
+            font-size: 1.25rem;
+        }
+
+    .project-tile {
+        padding: 10px;
+        width: 100%;
+        max-width: 30rem;
+        background-image: linear-gradient(15deg, var(--h-text) 5%, var(--text) 30%, white);
+        background-position: center; 
+        background-size: cover;
+        border-radius: 5px; 
+        box-shadow: 2px 2px 10px gray;
+        text-align: center;
+    }
+
+        .project__image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            object-position: top;
+            border-radius: 3px;
+        }
+
+        .project-tile h3 {
+            color: var(--welcome);
+            font-weight: 500;
+        }
+
+    .project__button {
+        padding-top: 1.5em;
+        text-align: center;
+        font-size: 1.25rem;
+    }
+        
+        .project__button ul {
+            padding-top: 1.5em;
+            text-align: center;
+            padding-left: 0;
+        }
+
+        .project__button a {
+            color: var(--h-text);
+            padding: 0.45em 0.75em;
+            border: 1px solid;
+            border-radius: 5px;
+        }
+            
+            .project__button a:hover,            
+            .project__button a:focus {
+                color: var(--welcome);
+                background-image: linear-gradient(15deg, gray 30%, var(--text) 60%);
+            }
+
+/*
+*   Secondary Section (interests)
+*/
+#interests {
+    background-image: url("https://i.postimg.cc/6qySm2ZK/product.jpg");
+    background-position: center; 
+    background-size: cover;
+    padding: 3.5em 0 3.5em 0;
+}
+    #interests .row {
+        justify-content: center;
+    }
+
+    #interests p {
+        font-size: 1.5rem;
+        font-weight: 200;
+        color: var(--welcome);
+    }
+
+    .interest__start {
+        color: var(--welcome);     
+        text-align: center;
+        padding-bottom: 1em; 
+
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+    }
+
+        .interest__start-h2 {
+            font-weight: 100;
+            font-size: 2em;
+            line-height: 1.35em;
+            background-color: rgba(0, 0, 0, .8);
+            padding: 0.3em 1em;
+        }
+
+    .content__image {
+        width: 100%;
+        max-width: 30rem;
+    }
+        
+        .interest__image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            object-position: top left;
+            border-radius: 5px;     
+            box-shadow: 2px 2px 10px black;   
+        }
+
+    .content-text {
+        width: 100%;
+        max-width: 40rem;
+    }
+
+/*
+*   Footer
+*/
+#footer {
+    background-image: linear-gradient(105deg, var(--welcome-bg-strp-3) 5%, var(--welcome-bg-strp-2) 30%, var(--welcome-bg-strp-1));
+    color: var(--welcome);
+    padding-bottom: 5em;
+}
+
+    #footer h3 {
+        margin-top: 0;
+        padding-top: 2em;
+        font-size: 2rem;
+        font-weight: 200;
+    }
+
+    .footer--row {
+    }
+
+    .footer--inner-row {
+        display: flex;
+        flex-flow: column wrap;
+        gap: .5em;
+    }
+
+        .footer--inner-row p {
+            font-size: 1.25rem;
+            color: var(--welcome);
+            margin: 0;
+        }
+
+        .footer--inner-row i {
+            font-size: 2rem;
+            color: var(--welcome);
+        }
+
+            .footer--inner-row i:hover, 
+            .footer--inner-row i:focus {
+                opacity: .8;
+            }
+
+            .footer--inner-row-a {
+                display: flex;
+                flex-flow: row nowrap;
+                align-items: center;
+                gap: 1em;
+            }
+
+/*
+*   Media Queries
+*/
+
+@media screen and (min-width: 800px) {
+
+    #projects {
+       padding: 5em 0 5em 0;  
+    }
+
+        .navbar-row {
+            justify-content: flex-end;
+        }
+
+        .project__start {
+        padding-bottom: 3em;
+        }
+
+        .project-tile {
+            width: 40%;
+            max-width: 25rem;
+        }
+
+        .project__button {
+            padding-top: 2.5em;
+        }
+
+        .interest__start {
+            padding-bottom: 1.5em;
+        }
+}
+
+@media screen and (min-width: 1200px) {
+    .content {
+        /*width: 45%;*/
+    }
+
+        .project-tile {
+            width: 42%;
+            max-width: 50rem;
+        }
+
+        .project__button {
+            padding-top: 3.5em;
+        }
+
+    #interests .row {
+        justify-content: space-between;
+    }
+
+        .content-image {
+            width: 60%;
+        }
+
+        .content-text {
+            width: 35%;
+        }
+
+        .interest__start {
+            padding-bottom: 2em;
+        }
+}
+
